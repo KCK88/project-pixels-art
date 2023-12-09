@@ -21,3 +21,13 @@
 .color {
     display: inline-block;
 }
+.pixel {
+    width: 40px;
+    height: 40px;
+    display: inline-grid;
+    border: 1px solid black;
+    background-color: white;
+}
+#pixel-board {
+    width: 240px;
+}
