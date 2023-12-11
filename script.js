@@ -29,8 +29,18 @@ const insertCollor = (eventSource) => {
   selectedPixel.style.backgroundColor = SelectedColor;
 };
 
+const clearBoard = () => {
+  const wipe = document.querySelectorAll('.pixel');
+  wipe.forEach((color) => {
+color.style.backgroundColor = 'white';
+  });
+};
+
 const palette = document.querySelector('#color-palette');
 palette.addEventListener('click', selectColor);
 
 const pixel = document.querySelector('#pixel-board');
 pixel.addEventListener('click', insertCollor);
+
+const button = document.querySelector('#clear-board');
+button.addEventListener('click', clearBoard);
