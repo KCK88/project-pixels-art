@@ -32,7 +32,25 @@ const insertCollor = (eventSource) => {
 const clearBoard = () => {
   const wipe = document.querySelectorAll('.pixel');
   wipe.forEach((color) => {
-color.style.backgroundColor = 'white';
+    color.style.backgroundColor = 'white';
+  });
+};
+
+function generateColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+
+  for (let index = 0; index < 6; index += 1) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+
+  return color;
+}
+
+const randomColor = () => {
+  const collors = document.querySelectorAll('.color');
+  collors.forEach((color) => {
+    color.style.backgroundColor = generateColor();
   });
 };
 
@@ -44,3 +62,6 @@ pixel.addEventListener('click', insertCollor);
 
 const button = document.querySelector('#clear-board');
 button.addEventListener('click', clearBoard);
+
+const randomize = document.querySelector('#button-random-color');
+randomize.addEventListener('click', randomColor);
